@@ -1,0 +1,97 @@
+/* Reset básico de margens e fontes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Estilo principal do cabeçalho */
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2e7d32; /* Verde agrícola */
+    padding: 15px 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 100;
+}
+
+/* Estilo da Logo */
+.logo a {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Estilo da lista de navegação (Desktop) */
+.nav-lista {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-lista a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-lista a:hover {
+    color: #a5d6a7; /* Verde claro ao passar o mouse */
+}
+
+/* Esconde o menu hambúrguer no computador */
+.menu-hamburguer {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-hamburguer .linha {
+    width: 100%;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* ======== RESPONSIVIDADE (Para Celulares) ======== */
+@media (max-width: 768px) {
+    /* Mostra o botão hambúrguer */
+    .menu-hamburguer {
+        display: flex;
+    }
+
+    /* Esconde e estiliza o menu lateral */
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        right: -100%; /* Escondido fora da tela */
+        width: 250px;
+        height: 100vh;
+        background-color: #1b5e20; /* Verde mais escuro */
+        transition: right 0.4s ease;
+    }
+
+    /* Classe ativada pelo JavaScript para mostrar o menu */
+    .nav-menu.ativo {
+        right: 0;
+    }
+
+    .nav-lista {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 40px;
+        gap: 30px;
+    }
+}
